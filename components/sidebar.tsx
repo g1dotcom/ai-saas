@@ -5,10 +5,12 @@ import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
 import {
+  Code,
   ImageIcon,
   LayoutDashboard,
   MessageSquare,
   Music,
+  Settings,
   VideoIcon,
 } from "lucide-react";
 
@@ -27,26 +29,37 @@ const routes = [
   {
     label: "Conversation",
     icon: MessageSquare,
-    href: "/dashboard",
+    href: "/conversation",
     color: "text-sky-500",
   },
   {
     label: "Image Generation",
     icon: ImageIcon,
-    href: "/dashboard",
+    href: "/image",
     color: "text-pink-700",
   },
   {
     label: "Video Generation",
     icon: VideoIcon,
-    href: "/dashboard",
+    href: "/video",
     color: "text-orange-700",
   },
   {
     label: "Musıc Generation",
     icon: Music,
-    href: "/dashboard",
+    href: "/music",
     color: "text-emerald-500",
+  },
+  {
+    label: "Code Generation",
+    icon: Code,
+    href: "/code",
+    color: "text-green-500",
+  },
+  {
+    label: "Settings",
+    icon: Settings,
+    href: "/settings",
   },
 ];
 
@@ -63,6 +76,20 @@ const Sidebar = () => {
             Genıus
           </h1>
         </Link>
+        <div className="space-y-1">
+          {routes.map((route) => (
+            <Link
+              href={route.href}
+              key={route.href}
+              className="text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition"
+            >
+              <div className="flex items-center flex-1">
+                <route.icon className={cn("w-6 h-6 mr-2", route.color)} />
+                {route.label}
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
     </div>
   );
