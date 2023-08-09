@@ -4,11 +4,51 @@ import Image from "next/image";
 import Link from "next/link";
 import { Montserrat } from "next/font/google";
 import { cn } from "@/lib/utils";
+import {
+  ImageIcon,
+  LayoutDashboard,
+  MessageSquare,
+  Music,
+  VideoIcon,
+} from "lucide-react";
 
 const montserrat = Montserrat({
   weight: "600",
   subsets: ["latin"],
 });
+
+const routes = [
+  {
+    label: "Dashboard",
+    icon: LayoutDashboard,
+    href: "/dashboard",
+    color: "text-violet-500",
+  },
+  {
+    label: "Conversation",
+    icon: MessageSquare,
+    href: "/dashboard",
+    color: "text-sky-500",
+  },
+  {
+    label: "Image Generation",
+    icon: ImageIcon,
+    href: "/dashboard",
+    color: "text-pink-700",
+  },
+  {
+    label: "Video Generation",
+    icon: VideoIcon,
+    href: "/dashboard",
+    color: "text-orange-700",
+  },
+  {
+    label: "Musıc Generation",
+    icon: Music,
+    href: "/dashboard",
+    color: "text-emerald-500",
+  },
+];
 
 const Sidebar = () => {
   return (
