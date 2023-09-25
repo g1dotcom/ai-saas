@@ -14,6 +14,25 @@ export async function POST(
     try {
         const {userId} = auth();
         const body = await req.json()
-        const {message} = body;
+        const {messages} = body;
+        
+        if(!userId) {
+            return new NextResponse("Unauthorized" , {status:401}) ;
+        }
+        if (!configuration.apiKey) {
+            return new NextResponse("OpenAI API Key not configured" , {status:500})
+        }
+        if (!messages) {
+            return new NextResponse("MEssages are required" , {status:400});
+        }
+        const response = await openai.createChatCompletion({
+            model:"gpt-3.5-turbo",
+            messages
+        })
+        return NextResponse.json(response.data.choices[0].messages)
     }
-}
+    catch (error) {
+        console.log("[CONVERSATİON_ERROR]",error)
+        return new NextResponse("Inrernal error",{status:500})
+    }
+} 
