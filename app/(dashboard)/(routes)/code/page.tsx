@@ -40,7 +40,7 @@ const CodePage = () => {
       };
       const newMessages = [...messages, userMessage];
 
-      const response = await axios.post("/api/conversation", {
+      const response = await axios.post("/api/code", {
         messages: newMessages,
       });
       setMessages((current) => [...current, userMessage, response.data]);
@@ -87,7 +87,7 @@ const CodePage = () => {
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
                         disabled={isLoading}
-                        placeholder="How do I calculate the radius of a circle?"
+                        placeholder="Simple toggle button using react hooks."
                         {...field}
                       />
                     </FormControl>
