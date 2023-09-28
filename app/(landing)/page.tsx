@@ -5,7 +5,7 @@ import React from "react";
 const LandingPage = () => {
   return (
     <div>
-      LandingPage
+      LandingPagee
       <div>
         <Link href="/sign-in">
           <Button>Login</Button>
