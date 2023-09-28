@@ -37,7 +37,7 @@ export async function POST(
         return NextResponse.json(response.data.choices[0].message)
     }
     catch (error) {
-        console.log("[CONVERSATİON_ERROR]",error)
+        console.log("[CODE_ERROR]",error)
         return new NextResponse("Inrernal error",{status:500})
     }
 } 
