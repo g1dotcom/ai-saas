@@ -18,6 +18,7 @@ import { Empty } from "@/components/empty";
 import { Loader } from "@/components/loader";
 import { BotAvatar } from "@/components/bot-avatar";
 import { UserAvatar } from "@/components/user-avatar";
+import { cn } from "@/lib/utils";
 
 const ConversationPage = () => {
   const router = useRouter();
