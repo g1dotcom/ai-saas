@@ -46,7 +46,7 @@ const routes = [
     color: "text-orange-700",
   },
   {
-    label: "Musıc Generation",
+    label: "Music Generation",
     icon: Music,
     href: "/music",
     color: "text-emerald-500",
@@ -74,7 +74,7 @@ const Sidebar = () => {
             <Image fill alt="logo" src="/logo.png" />
           </div>
           <h1 className={cn("text-2xl font-bold", montserrat.className)}>
-            Genıus
+            Genius
           </h1>
         </Link>
         <div className="space-y-1">

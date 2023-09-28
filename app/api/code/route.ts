@@ -28,11 +28,11 @@ export async function POST(
             return new NextResponse("OpenAI API Key not configured" , {status:500})
         }
         if (!messages) {
-            return new NextResponse("MEssages are required" , {status:400});
+            return new NextResponse("Messages are required" , {status:400});
         }
         const response = await openai.createChatCompletion({
             model:"gpt-3.5-turbo",
-            messages:[instructionMessage]
+            messages:[instructionMessage, ...messages]
         })
         return NextResponse.json(response.data.choices[0].message)
     }
