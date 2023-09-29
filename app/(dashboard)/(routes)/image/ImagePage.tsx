@@ -1,13 +1,11 @@
 "use client";
 import axios from "axios";
 import * as z from "zod";
-import { ImageIcon, MessageSquare } from "lucide-react";
+import { ImageIcon } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-
 import { Heading } from "@/components/heading";
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form";
-
 import { amountOptions, formSchema } from "./constants";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -15,9 +13,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { Empty } from "@/components/empty";
 import { Loader } from "@/components/loader";
-import { BotAvatar } from "@/components/bot-avatar";
-import { UserAvatar } from "@/components/user-avatar";
-import { cn } from "@/lib/utils";
 import {
   Select,
   SelectContent,
@@ -26,7 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const ImagePage = () => {
+export const ImagePage = () => {
   const router = useRouter();
   const [images, setImages] = useState<string[]>([]);
 
@@ -88,7 +83,7 @@ const ImagePage = () => {
               <FormField
                 name="prompt"
                 render={({ field }) => (
-                  <FormItem className="col-span-12 lg:col-span-6">
+                  <FormItem className="col-span-12 lg:col-span-10">
                     <FormControl className="m-0 p-0">
                       <Input
                         className="border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent"
@@ -151,5 +146,3 @@ const ImagePage = () => {
     </div>
   );
 };
-
-export default ImagePage;
