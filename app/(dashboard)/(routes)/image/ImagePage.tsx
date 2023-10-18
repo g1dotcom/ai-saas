@@ -21,6 +21,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useProModal } from "@/hook/use-pro-modal";
+import toast from "react-hot-toast";
 
 export const ImagePage = () => {
   const proModal = useProModal();
@@ -51,6 +52,8 @@ export const ImagePage = () => {
     } catch (error: any) {
       if (error?.response?.status === 403) {
         proModal.onOpen();
+      } else {
+        toast.error("Something went rong");
       }
     } finally {
       router.refresh();
