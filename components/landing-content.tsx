@@ -10,15 +10,22 @@ const testimonials = [
     description: "This is the best application I've ever used!",
   },
   {
-    name: "Çağatay Karahan",
+    name: "Çağatay",
     avatar: "A",
     title: "Software Developer",
     description: "I use this daily for generating new photos!",
   },
   {
-    name: "Merve Burçin Çakır",
+    name: "Merve Burçin",
     avatar: "M",
     title: "Designer",
+    description:
+      "This app has changed my life, cannot imagine working without it!",
+  },
+  {
+    name: "Merve Berkay",
+    avatar: "M",
+    title: "Front End Developer",
     description:
       "This app has changed my life, cannot imagine working without it!",
   },
